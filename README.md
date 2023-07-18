@@ -25,9 +25,9 @@ Personally, I think the optimization algorithm is still well written.
 ## How to choose a version
 .java file is source code, which is unnecessary for ordinary people.  
 Run command (above java8, excluding java8) **  
-'java filename.java'  
+`java filename.java`  
 .jar file is packaged and can be renamed.  
 **Run command (all versions)**  
-'java -jar filename.jar'  
+`java -jar filename.jar`  
 ## Run dependencies
 [java 8](https://www.java.com) and above  
