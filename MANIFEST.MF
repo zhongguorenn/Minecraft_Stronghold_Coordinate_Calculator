@@ -1,3 +1,0 @@
-Manifest-Version: 1.0
-Main-Class: Minecraft_Stronghold_Coordinate_Calculator_enUS
-
