@@ -40,11 +40,11 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
         System.out.println("The second drop point x coordinate");
         double Ex2= s.nextDouble();
         System.out.println("The second drop point z-coordinate");
-        System.out.println("Whether to enable acceleration algorithms");
-        String YN = s.nextLine();
-        boolean enable;
-        enable= YN.equals("y");
         double Ey2= s.nextDouble();
+        System.out.println("Whether to enable acceleration algorithms(0(disable)/1(enable))");
+        int YN = s.nextInt();
+        boolean enable;
+        enable = YN == 1;
         double k1 = (Ey1-Sy1)/(Ex1-Sx1);
         double k2 = (Ey2-Sy2)/(Ex2-Sx2);
         double b1 = (Sy1-Sx1*k1);
