@@ -6,6 +6,8 @@
  * Project address https://github.com/zhongguorenn/Minecraft_Stronghold_Coordinate_Calculator
  * Translated by zhongguorenn and Microsoft Translator
  * Proofread by zhongguorenn and Baidu Translator
+ * @author zhongguorenn
+ * @version 1.0.1
  */
 
 import java.util.Scanner;
@@ -38,6 +40,10 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
         System.out.println("The second drop point x coordinate");
         double Ex2= s.nextDouble();
         System.out.println("The second drop point z-coordinate");
+        System.out.println("Whether to enable acceleration algorithms");
+        String YN = s.nextLine();
+        boolean enable;
+        enable= YN.equals("y");
         double Ey2= s.nextDouble();
         double k1 = (Ey1-Sy1)/(Ex1-Sx1);
         double k2 = (Ey2-Sy2)/(Ex2-Sx2);
@@ -50,14 +56,14 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
             System.exit(1);
         }
         //-----------------------Dividing line-------------------------------
-        //输出函数表达式以防计算失败
+        //Output function expressions to prevent calculation failure
         System.out.println("Function 1 is:y1="+k1+"*x+"+b1);
         System.out.println("Function 2 is:y2="+k2+"*x+"+b2);
         System.out.println("If the calculation fails, please import this function into the function drawing program to find the intersection point, such as the calculator that comes with Win10 and above");
         //-----------------------Dividing line-------------------------------
         // Inverse function algorithm acceleration module
         // whenever a small x change causes a large change in the y value
-        if(((k1>0&k1<1)&(k2>0&k2<1))|((k1<0&k1>-1)&(k2<0&k2>-1))|((k1>0&k1<1)&(k2<0&k2>-1))|(k1<0&k1>-1)&(k2>0&k2<1)){
+        if((((k1>0&k1<1)&(k2>0&k2<1))|((k1<0&k1>-1)&(k2<0&k2>-1))|((k1>0&k1<1)&(k2<0&k2>-1))|(k1<0&k1>-1)&(k2>0&k2<1))&enable){
             wheelKValue=true;
             k1=(1/k1);
             k2=(1/k2);
@@ -67,7 +73,7 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
         //-----------------------Dividing line-------------------------------
         //Function y-axis symmetry algorithm acceleration module
         // Symmetry the intersection located on the negative semi-axis to the positive semi-axis to reduce traversal time
-        if(Math.abs((k1+b1-k2-b2))>Math.abs((-k1+b1+k2-b2))){
+        if((Math.abs((k1+b1-k2-b2))>Math.abs((-k1+b1+k2-b2)))&enable){
             leftToRight=true;
             k1=-k1;
             k2=-k2;
@@ -96,8 +102,9 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
                     x = -x;
                     if (wheelKValue) {
                         //Inverse function algorithm restore
-                        x = (1 / x);
-                        y = (1 / y );
+                        double Tmp = x;
+                        x = y;
+                        y = Tmp;
                     }
                 }
                 x = (int) x;
@@ -109,7 +116,7 @@ public class Minecraft_Stronghold_Coordinate_Calculator_enUS {
             }
         }
         //-----------------------Dividing line-------------------------------
-        //退出程序
+        //exit
         System.out.println("The program is about to exit after execution");
         System.exit(0);
     }
