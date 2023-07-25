@@ -40,10 +40,10 @@ public class Minecraft_Stronghold_Coordinate_Calculator_zhCN {
         double Ex2= s.nextDouble();
         System.out.println("第二个落点z坐标");
         double Ey2= s.nextDouble();
-        System.out.println("是否启用加速算法");
-        String YN = s.nextLine();
+        System.out.println("是否启用加速算法(0(禁用)/1(启用))");
+        int YN = s.nextInt();
         boolean enable;
-        enable= YN.equals("y");
+        enable = YN == 1;
         double k1 = (Ey1-Sy1)/(Ex1-Sx1);
         double k2 = (Ey2-Sy2)/(Ex2-Sx2);
         double b1 = (Sy1-Sx1*k1);
