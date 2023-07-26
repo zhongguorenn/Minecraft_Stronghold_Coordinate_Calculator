@@ -7,10 +7,10 @@
 个人觉得优化算法写的还是不错的。  
 **先提供中文版的，晚点翻译成英文**
 ## 如何选择版本
-.java文件是源码，普通人没必要  
+.java文件是源码，体积更小，但不能改名。  
 **运行命令(java8以上，不包含java8)**  
 `java 文件名.java`  
-.jar文件是打包好的，可以改名  
+.jar文件是打包好的，可以改名。  
 **运行命令(所有版本)**  
 `java -jar 文件名.jar`  
 ## 运行库
@@ -23,8 +23,8 @@ There are some optimization algorithms written, and the results should not be ca
 Personally, I think the optimization algorithm is still well written.  
 **The Chinese version will be provided first, and the English version will be translated later.**
 ## How to choose a version
-.java file is source code, which is unnecessary for ordinary people.  
-Run command (above java8, excluding java8) **  
+.java file is source code and smaller in size, but cannot be renamed.  
+**Run command (above java8, excluding java8)**  
 `java filename.java`  
 .jar file is packaged and can be renamed.  
 **Run command (all versions)**  
